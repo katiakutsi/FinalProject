@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FavouriteProduct" representedClassName="FavouriteProduct" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+        <attribute name="size" optional="YES" attributeType="String"/>
+        <relationship name="ownerFav" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="favourites" inverseEntity="User"/>
+    </entity>
+    <entity name="OrderProduct" representedClassName="OrderProduct" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+        <attribute name="size" optional="YES" attributeType="String"/>
+        <relationship name="ownerOrd" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="orders" inverseEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <relationship name="favourites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FavouriteProduct" inverseName="ownerFav" inverseEntity="FavouriteProduct"/>
+        <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderProduct" inverseName="ownerOrd" inverseEntity="OrderProduct"/>
+    </entity>
+    <elements>
+        <element name="FavouriteProduct" positionX="-54" positionY="54" width="128" height="148"/>
+        <element name="OrderProduct" positionX="-63" positionY="9" width="128" height="148"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="133"/>
+    </elements>
+</model>
