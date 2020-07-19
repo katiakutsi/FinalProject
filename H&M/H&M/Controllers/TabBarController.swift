@@ -16,7 +16,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         self.delegate = self
         updateSettingsTab()
-//        updateSignInTab()
         
         NotificationCenter.default.addObserver(
             self,
